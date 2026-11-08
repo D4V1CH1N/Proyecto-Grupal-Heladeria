@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gelato Studio - Heladeria Artesanal &amp; Vanguardia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+  <header class="barra-superior">
+    <div class="contenedor-header">
+      <nav id="navegacion-principal" class="navegacion-principal">
+        <ul class="enlaces-navegacion">
+          <li><a href="#vista-inicio" class="enlace-menu activo" data-vista="vista-inicio">Inicio</a></li>
+          <li><a href="#vista-catalogo" class="enlace-menu" data-vista="vista-catalogo">Menú</a></li>
+          <li><a href="#vista-auditoria" class="enlace-menu" data-vista="vista-auditoria">Eventos</a></li>
+          <li><a href="#vista-auditoria" class="enlace-menu" data-vista="vista-auditoria">Auditoría</a></li>
+        </ul>
+      </nav>
+
+      <div class="marca-sistema" data-vista="vista-inicio">
+        <span class="logo-letra">GS</span>
+        <div class="texto-marca">
+          <span class="nombre-marca">Gelato Studio</span>
+          <span class="subtitulo-marca">Laboratorio Artesanal</span>
+        </div>
+      </div>
+
+      <div class="acciones-header">
+        <div class="herramienta-busqueda">
+          <input type="text" id="buscador-producto" class="input-busqueda" placeholder="Buscar sabor o topping...">
+        </div>
+        <button type="button" id="btn-tema" class="btn-control-tema">
+          <span id="btn-tema-texto">Modo Oscuro</span>
+        </button>
+        <button type="button" id="btn-carrito-header" class="btn-carrito-header" aria-label="Abrir carrito de compras">
+          <span class="icono-bolsa"></span>
+          <span id="badge-carrito" class="badge-carrito">0</span>
+        </button>
+        <button type="button" id="btn-hamburguesa" class="btn-hamburguesa" aria-label="Abrir navegacion movil">
+          <span class="linea"></span>
+          <span class="linea"></span>
+          <span class="linea"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor-principal">
+    <section id="vista-inicio" class="vista-seccion">
+      <div class="banner-hero">
+        <div class="contenido-hero">
+          <span class="insignia-hero">Laboratorio &amp; Sabor Botanico</span>
+          <h1 class="titulo-hero">Alta heladeria de autor creada para deleitar</h1>
+          <p class="descripcion-hero">En Gelato Studio combinamos ciencia gastronómica, frutas seleccionadas al amanecer y crema pura de pastoreo para brindar una experiencia sensorial incomparable.</p>
+          <div class="botones-hero">
+            <button type="button" class="btn-hero-primario" data-vista="vista-catalogo">Descubrir Nuestro Menú</button>
+            <button type="button" class="btn-hero-secundario" data-vista="vista-auditoria">Monitor de Eventos</button>
+          </div>
+        </div>
+        <div class="visual-hero">
+          <div class="cono-hero-circulo">
+            <div class="cono-hero-forma"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="seccion-pilares">
+        <div class="tarjeta-pilar">
+          <div class="icono-pilar"></div>
+          <h3 class="titulo-pilar">Ingredientes Botanicos</h3>
+          <p class="texto-pilar">Cosechas organicas, hierbas frescas e infusiones naturales sin colorantes artificiales.</p>
+        </div>
+        <div class="tarjeta-pilar">
+          <div class="icono-pilar pilar-menta"></div>
+          <h3 class="titulo-pilar">Mantecado de Precision</h3>
+          <p class="texto-pilar">Texturas sedosas con microcristales imperceptibles gracias al batido en frio constante.</p>
+        </div>
+        <div class="tarjeta-pilar">
+          <div class="icono-pilar pilar-entrega"></div>
+          <h3 class="titulo-pilar">Punto de Venta Dinamico</h3>
+          <p class="texto-pilar">Operaciones POS fluidas con auditoria continua, temporizador fiscal y checkout inteligente.</p>
+        </div>
+      </div>
+
+      <div class="banner-promocion">
+        <div class="texto-promo">
+          <h2 class="titulo-promo">¿Deseas una creacion personalizada?</h2>
+          <p class="desc-promo">Explora nuestras combinaciones exclusivas de autor y pide en linea al instante.</p>
+        </div>
+        <button type="button" class="btn-promo" data-vista="vista-catalogo">Explorar Catalogo</button>
+      </div>
+    </section>
+
+    <section id="vista-catalogo" class="vista-seccion" style="display: none;">
+      <div class="cabecera-catalogo">
+        <div>
+          <span class="etiqueta-seccion">Coleccion de Temporada</span>
+          <h2 class="titulo-seccion-catalogo">Catalogo de Creaciones Gelato Studio</h2>
+        </div>
+        <p class="subtitulo-seccion">Selecciona tus helados y toppings artesanales favoritos.</p>
+      </div>
+
+      <div class="controles-catalogo">
+        <div class="botones-filtro">
+          <button type="button" class="btn-filtro activo" data-filtro="todos">Todos</button>
+          <button type="button" class="btn-filtro" data-filtro="conos">Conos</button>
+          <button type="button" class="btn-filtro" data-filtro="botes">Botes</button>
+          <button type="button" class="btn-filtro" data-filtro="toppings">Toppings</button>
+        </div>
+        <div class="selector-orden">
+          <select id="selector-ordenar" class="control-select">
+            <option value="defecto">Ordenar: Predeterminado</option>
+            <option value="menor-precio">Precio: Menor a Mayor</option>
+            <option value="mayor-precio">Precio: Mayor a Menor</option>
+            <option value="alfabetico">Nombre: Alfabetico</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="cuadricula-productos" class="cuadricula-productos">
+        <article class="tarjeta-producto" data-categoria="conos" data-id="1" data-nombre="Cono Simple Vainilla" data-precio="15.00">
+          <div class="etiqueta-categoria">Cono</div>
+          <div class="ilustracion-producto cono"></div>
+          <h3 class="nombre-producto">Cono Simple Vainilla</h3>
+          <p class="descripcion-producto">Clasica vainilla natural en barquillo crocante azucarado.</p>
+          <div class="pie-tarjeta">
+            <span class="precio-item">Bs 15.00</span>
+            <div class="grupo-botones-tarjeta">
+              <button type="button" class="btn-ver-detalle">Ver detalles</button>
+              <button type="button" class="btn-agregar" data-id="1">Añadir al carrito</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-producto" data-categoria="conos" data-id="2" data-nombre="Cono Doble Chocolate" data-precio="25.00">
+          <div class="etiqueta-categoria">Cono</div>
+          <div class="ilustracion-producto cono chocolate"></div>
+          <h3 class="nombre-producto">Cono Doble Chocolate</h3>
+          <p class="descripcion-producto">Doble porcion de chocolate amargo suizo y cobertura de cacao puro.</p>
+          <div class="pie-tarjeta">
+            <span class="precio-item">Bs 25.00</span>
+            <div class="grupo-botones-tarjeta">
+              <button type="button" class="btn-ver-detalle">Ver detalles</button>
+              <button type="button" class="btn-agregar" data-id="2">Añadir al carrito</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-producto" data-categoria="conos" data-id="3" data-nombre="Cono Waffle Fresa Silvestre" data-precio="22.00">
+          <div class="etiqueta-categoria">Cono</div>
+          <div class="ilustracion-producto cono fresa"></div>
+          <h3 class="nombre-producto">Cono Waffle Fresa Silvestre</h3>
+          <p class="descripcion-producto">Helado artesanal de fresas silvestres servido en waffle caliente.</p>
+          <div class="pie-tarjeta">
+            <span class="precio-item">Bs 22.00</span>
+            <div class="grupo-botones-tarjeta">
+              <button type="button" class="btn-ver-detalle">Ver detalles</button>
+              <button type="button" class="btn-agregar" data-id="3">Añadir al carrito</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-producto" data-categoria="conos" data-id="4" data-nombre="Cono Dulce de Leche" data-precio="24.00">
+          <div class="etiqueta-categoria">Cono</div>
+          <div class="ilustracion-producto cono caramelo"></div>
+          <h3 class="nombre-producto">Cono Dulce de Leche</h3>
+          <p class="descripcion-producto">Dulce de leche tradicional con vetas de manjar casero.</p>
+          <div class="pie-tarjeta">
+            <span class="precio-item">Bs 24.00</span>
+            <div class="grupo-botones-tarjeta">
+              <button type="button" class="btn-ver-detalle">Ver detalles</button>
+              <button type="button" class="btn-agregar" data-id="4">Añadir al carrito</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-producto" data-categoria="botes" data-id="5" data-nombre="Bote Personal Menta Chip" data-precio="32.00">
+          <div class="etiqueta-categoria">Bote</div>
+          <div class="ilustracion-producto bote menta"></div>
+          <h3 class="nombre-producto">Bote Personal Menta Chip</h3>
+          <p class="descripcion-producto">Refrescante crema de menta verde con escamas de chocolate negro.</p>
+          <div class="pie-tarjeta">
+            <span class="precio-item">Bs 32.00</span>
+            <div class="grupo-botones-tarjeta">
+              <button type="button" class="btn-ver-detalle">Ver detalles</button>
+              <button type="button" class="btn-agregar" data-id="5">Añadir al carrito</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-producto" data-categoria="botes" data-id="6" data-nombre="Bote Medio Litro Maracuya" data-precio="55.00">
+          <div class="etiqueta-categoria">Bote</div>
+          <div class="ilustracion-producto bote maracuya"></div>
+          <h3 class="nombre-producto">Bote Medio Litro Maracuya</h3>
+          <p class="descripcion-producto">Sorbetto cremoso de maracuya tropical 500ml para deleitar.</p>
+          <div class="pie-tarjeta">
+            <span class="precio-item">Bs 55.00</span>
+            <div class="grupo-botones-tarjeta">
+              <button type="button" class="btn-ver-detalle">Ver detalles</button>
+              <button type="button" class="btn-agregar" data-id="6">Añadir al carrito</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-producto" data-categoria="botes" data-id="7" data-nombre="Bote Familiar Tres Leches" data-precio="85.00">
+          <div class="etiqueta-categoria">Bote</div>
+          <div class="ilustracion-producto bote crema"></div>
+          <h3 class="nombre-producto">Bote Familiar Tres Leches</h3>
+          <p class="descripcion-producto">Presentacion de 1000ml con bizcocho suave y crema tres leches.</p>
+          <div class="pie-tarjeta">
+            <span class="precio-item">Bs 85.00</span>
+            <div class="grupo-botones-tarjeta">
+              <button type="button" class="btn-ver-detalle">Ver detalles</button>
+              <button type="button" class="btn-agregar" data-id="7">Añadir al carrito</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-producto" data-categoria="botes" data-id="8" data-nombre="Bote Gourmet Pistacho" data-precio="98.00">
+          <div class="etiqueta-categoria">Bote</div>
+          <div class="ilustracion-producto bote pistacho"></div>
+          <h3 class="nombre-producto">Bote Gourmet Pistacho</h3>
+          <p class="descripcion-producto">Pistacho puro de Bronte tostado en envase termico de 1000ml.</p>
+          <div class="pie-tarjeta">
+            <span class="precio-item">Bs 98.00</span>
+            <div class="grupo-botones-tarjeta">
+              <button type="button" class="btn-ver-detalle">Ver detalles</button>
+              <button type="button" class="btn-agregar" data-id="8">Añadir al carrito</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-producto" data-categoria="toppings" data-id="9" data-nombre="Chispas de Chocolate Belga" data-precio="5.00">
+          <div class="etiqueta-categoria">Topping</div>
+          <div class="ilustracion-producto topping chispas"></div>
+          <h3 class="nombre-producto">Chispas de Chocolate Belga</h3>
+          <p class="descripcion-producto">Gotas crocantes de chocolate 70% cacao especial para coberturas.</p>
+          <div class="pie-tarjeta">
+            <span class="precio-item">Bs 5.00</span>
+            <div class="grupo-botones-tarjeta">
+              <button type="button" class="btn-ver-detalle">Ver detalles</button>
+              <button type="button" class="btn-agregar" data-id="9">Añadir al carrito</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-producto" data-categoria="toppings" data-id="10" data-nombre="Salsa de Caramelo Salado" data-precio="7.00">
+          <div class="etiqueta-categoria">Topping</div>
+          <div class="ilustracion-producto topping salsa"></div>
+          <h3 class="nombre-producto">Salsa de Caramelo Salado</h3>
+          <p class="descripcion-producto">Salsa tibia y sedosa elaborada con mantequilla y flor de sal marina.</p>
+          <div class="pie-tarjeta">
+            <span class="precio-item">Bs 7.00</span>
+            <div class="grupo-botones-tarjeta">
+              <button type="button" class="btn-ver-detalle">Ver detalles</button>
+              <button type="button" class="btn-agregar" data-id="10">Añadir al carrito</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-producto" data-categoria="toppings" data-id="11" data-nombre="Frutos Rojos Silvestres" data-precio="8.00">
+          <div class="etiqueta-categoria">Topping</div>
+          <div class="ilustracion-producto topping frutos"></div>
+          <h3 class="nombre-producto">Frutos Rojos Silvestres</h3>
+          <p class="descripcion-producto">Compota fresca de arandanos, moras y frambuesas naturales.</p>
+          <div class="pie-tarjeta">
+            <span class="precio-item">Bs 8.00</span>
+            <div class="grupo-botones-tarjeta">
+              <button type="button" class="btn-ver-detalle">Ver detalles</button>
+              <button type="button" class="btn-agregar" data-id="11">Añadir al carrito</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-producto" data-categoria="toppings" data-id="12" data-nombre="Nuez Pecana Tostada" data-precio="6.00">
+          <div class="etiqueta-categoria">Topping</div>
+          <div class="ilustracion-producto topping nuez"></div>
+          <h3 class="nombre-producto">Nuez Pecana Tostada</h3>
+          <p class="descripcion-producto">Trozos de nuez pecana seleccionada ligeramente caramelizada.</p>
+          <div class="pie-tarjeta">
+            <span class="precio-item">Bs 6.00</span>
+            <div class="grupo-botones-tarjeta">
+              <button type="button" class="btn-ver-detalle">Ver detalles</button>
+              <button type="button" class="btn-agregar" data-id="12">Añadir al carrito</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="vista-detalle" class="vista-seccion" style="display: none;">
+      <div class="barra-volver">
+        <button type="button" id="btn-volver-catalogo" class="btn-volver-catalogo">&larr; Volver al Menú</button>
+      </div>
+      <div class="contenedor-detalle-producto">
+        <div class="columna-detalle-visual">
+          <div class="tarjeta-imagen-detalle">
+            <span id="detalle-categoria-badge" class="badge-detalle-cat">Categoria</span>
+            <div id="detalle-imagen-visual" class="ilustracion-producto cono detalle-grande"></div>
+          </div>
+        </div>
+        <div class="columna-detalle-info">
+          <span class="origen-artesanal">Elaboracion Gelato Studio</span>
+          <h1 id="detalle-titulo" class="titulo-producto-detalle">Cono Simple Vainilla</h1>
+          <div class="fila-precio-detalle">
+            <span id="detalle-precio" class="precio-grande-detalle">Bs 15.00</span>
+            <span class="etiqueta-disponibilidad">Disponible en mostrador</span>
+          </div>
+          <p id="detalle-descripcion" class="texto-descripcion-detalle">Clasica vainilla natural en barquillo crocante azucarado.</p>
+          <div class="caja-opciones-detalle">
+            <div class="grupo-opcion">
+              <label for="detalle-presentacion" class="etiqueta-opcion">Presentacion de Servicio</label>
+              <select id="detalle-presentacion" class="control-select ancho-completo">
+                <option value="estandar">Presentacion Estandar</option>
+                <option value="extra-servilletas">Con Servilletas y Cucharita Especial</option>
+                <option value="empaque-frio">Empaque Termico para Llevar</option>
+              </select>
+            </div>
+            <div class="grupo-opcion">
+              <label for="detalle-cantidad" class="etiqueta-opcion">Cantidad de Unidades</label>
+              <div class="control-cantidad-detalle">
+                <input type="number" id="detalle-cantidad" class="input-numero-detalle" min="1" max="20" value="1">
+              </div>
+            </div>
+          </div>
+          <div class="acciones-detalle-compra">
+            <button type="button" id="btn-detalle-agregar" class="btn-detalle-coral">Añadir al carrito</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="vista-auditoria" class="vista-seccion" style="display: none;">
+      <div class="cabecera-auditoria">
+        <div>
+          <span class="etiqueta-seccion">Seguridad &amp; Monitoreo</span>
+          <h2 class="titulo-seccion-catalogo">Monitor de Eventos en Vivo</h2>
+        </div>
+        <span id="contador-eventos" class="placa-conteo-auditoria">0 eventos registrados</span>
+      </div>
+
+      <div class="panel-auditoria-completo">
+        <div class="barra-acciones-auditoria">
+          <div class="grupo-botones-log">
+            <button type="button" id="btn-exportar-log" class="btn-accion-log">Exportar Log</button>
+            <button type="button" id="btn-limpiar-log" class="btn-accion-log secundario">Limpiar Vista</button>
+          </div>
+          <div class="filtro-auditoria">
+            <select id="filtro-tipo-evento" class="control-select">
+              <option value="todos">Todos los eventos</option>
+              <option value="click">Clics</option>
+              <option value="change">Selectores (change)</option>
+              <option value="keyup">Buscador (keyup)</option>
+            </select>
+          </div>
+        </div>
+        <div class="contenedor-log-grande">
+          <ul id="lista-auditoria" class="lista-auditoria"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="cortina-drawer" class="cortina-drawer"></div>
+  <aside id="drawer-carrito" class="drawer-carrito">
+    <div class="cabecera-drawer">
+      <div class="titulo-drawer-grupo">
+        <h3 class="titulo-drawer">Tu Carrito de Helados</h3>
+        <span id="contador-articulos" class="conteo-articulos-drawer">0 articulos</span>
+      </div>
+      <button type="button" id="btn-cerrar-drawer" class="btn-cerrar-drawer">&times;</button>
+    </div>
+    <div class="cuerpo-drawer">
+      <ul id="lista-carrito" class="lista-carrito">
+        <li class="item-vacio">El carrito esta vacio. Seleccione productos del catalogo.</li>
+      </ul>
+    </div>
+    <div class="pie-drawer">
+      <div class="fila-resumen">
+        <span>Subtotal:</span>
+        <span>Bs <span id="monto-subtotal">0.00</span></span>
+      </div>
+      <div class="fila-resumen">
+        <span>Impuesto Ley (13%):</span>
+        <span>Bs <span id="monto-impuesto">0.00</span></span>
+      </div>
+      <div class="fila-resumen fila-total">
+        <span>Total a Pagar:</span>
+        <span>Bs <span id="monto-total">0.00</span></span>
+      </div>
+      <div class="botones-carrito-drawer">
+        <button type="button" id="btn-vaciar-carrito" class="btn-secundario-drawer">Vaciar</button>
+        <button type="button" id="btn-abrir-checkout" class="btn-coral-checkout">Cobrar Pedido</button>
+      </div>
+    </div>
+  </aside>
+
+  <div id="modal-checkout" class="cortina-modal">
+    <div class="ventana-modal">
+      <div class="cabecera-modal">
+        <h3 class="titulo-modal">Confirmar Cobro y Facturacion</h3>
+        <button type="button" id="btn-cerrar-modal" class="btn-cerrar-modal">&times;</button>
+      </div>
+      <div class="barra-temporizador">
+        <span class="etiqueta-temp">Tiempo limite de transaccion:</span>
+        <span id="temporizador-cuenta" class="reloj-temp">00:30</span>
+      </div>
+      <div class="caja-monto-modal">
+        <span>Monto Total a Cancelar:</span>
+        <strong id="modal-monto-total">Bs 0.00</strong>
+      </div>
+      <form id="form-checkout" class="formulario-checkout" novalidate>
+        <div class="grupo-campo">
+          <label for="cliente-nombre" class="etiqueta-campo">Nombre del Cliente *</label>
+          <input type="text" id="cliente-nombre" class="input-texto" placeholder="Ingrese nombre completo">
+          <span id="error-nombre" class="msg-error"></span>
+        </div>
+        <div class="grupo-campo">
+          <label for="cliente-documento" class="etiqueta-campo">NIT o Carnet de Identidad *</label>
+          <input type="text" id="cliente-documento" class="input-texto" placeholder="Ingrese numero de documento">
+          <span id="error-documento" class="msg-error"></span>
+        </div>
+        <div class="grupo-campo">
+          <label for="cliente-pago" class="etiqueta-campo">Metodo de Pago *</label>
+          <select id="cliente-pago" class="control-select ancho-completo">
+            <option value="">Seleccione forma de pago...</option>
+            <option value="efectivo">Efectivo Moneda Nacional</option>
+            <option value="qr">Transferencia QR</option>
+            <option value="tarjeta">Tarjeta Debito o Credito</option>
+          </select>
+          <span id="error-pago" class="msg-error"></span>
+        </div>
+        <div class="grupo-campo">
+          <label for="cliente-notas" class="etiqueta-campo">Notas de Entrega</label>
+          <input type="text" id="cliente-notas" class="input-texto" placeholder="Instrucciones especiales para el pedido">
+        </div>
+        <div class="acciones-formulario">
+          <button type="button" id="btn-cancelar-checkout" class="btn-secundario">Cancelar</button>
+          <button type="submit" id="btn-confirmar-pago" class="btn-primario">Procesar Venta</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="contenedor-toasts" class="contenedor-toasts"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="JS/script.js"></script>
+</body>
+</html>
